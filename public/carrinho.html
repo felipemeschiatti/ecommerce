@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras - Felipe Esportes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="carrinho.css"> </head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo da empresa">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li class="dropdown">
+                    <a href="#">MEN ▼</a>
+                    <ul class="submenu">
+                        <li><a href="#">Camisetas</a></li>
+                        <li><a href="#">Calças</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">WOMAN ▼</a>
+                    <ul class="submenu">
+                        <li><a href="#">Vestidos</a></li>
+                        <li><a href="#">Saias</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="actions">
+            <button class="search-btn">🔍</button>
+            <button class="account-btn">MINHA CONTA</button>
+        </div>
+    </header>
+
+    <main class="cart-page">
+        <div class="container cart-content">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <span>Shopping cart</span>
+            </div>
+
+            <h1 class="cart-title">Shopping cart</h1>
+            <!-- Adicionar ID para contagem de itens -->
+            <p class="cart-items-count" id="cart-item-count-display">Carregando...</p>
+
+            <div class="cart-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Quantidade</th>
+                            <th>Preço Unitário</th>
+                            <th>Total</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <!-- Adicionar ID e remover conteúdo estático -->
+                    <tbody id="cart-items-container">
+                        <!-- Linhas do carrinho serão inseridas aqui pelo JavaScript -->
+                    </tbody>
+                    <!-- Rodapé da tabela para totais -->
+                    <tfoot>
+                         <tr class="cart-summary">
+                            <td colspan="3" class="total-label">Subtotal</td>
+                            <!-- Adicionar ID para subtotal -->
+                            <td class="total-amount" id="cart-subtotal-display">R$0,00</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <div class="cart-actions">
+                <button class="continue-shopping-btn">&lt; Continue comprando</button>
+                <div class="update-checkout">
+                    <button class="update-cart-btn">🔄 Atualizar</button>
+                    <button class="proceed-to-checkout-btn">Finalizar a compra &gt;</button>
+                </div>
+            </div>
+
+            <div class="also-like">
+                <h2>Você também pode gostar destes produtos</h2>
+                <div class="product-list">
+                    <div class="product-card">
+                        <img src="images/produto-relacionado1.png" alt="Men - Product 02">
+                        <h3>Men - Product 02</h3>
+                        <p>R$120.00</p>
+                        <a href="#" class="view-product-btn">Ver Produto</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/produto-relacionado2.png" alt="Woman - Product 03">
+                        <h3>Woman -
+                <button class="continue-shopping-btn">&lt; Continue shopping</button>
+                <div class="update-checkout">
+                    <button class="update-cart-btn">🔄 Update cart</button>
+                    <button class="proceed-to-checkout-btn">Proceed to checkout &gt;</button>
+                </div>
+            </div>
+
+            <div class="also-like">
+                <h2>Você também pode gostar destes produtos</h2>
+                <div class="product-list">
+                    <div class="product-card">
+                        <img src="images/produto-relacionado1.png" alt="Men - Product 02">
+                        <h3>Men - Product 02</h3>
+                        <p>R$120.00</p>
+                        <a href="#" class="view-product-btn">Ver Produto</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/produto-relacionado2.png" alt="Woman - Product 03">
+                        <h3>Woman - Product 03</h3>
+                        <p>R$140.00</p>
+                        <a href="#" class="view-product-btn">Ver Produto</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/produto-relacionado3.png" alt="Woman - Product 04">
+                        <h3>Woman - Product 04</h3>
+                        <p>R$160.00</p>
+                        <a href="#" class="view-product-btn">Ver Produto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <aside class="order-summary">
+            <div class="summary-box">
+                <h2>Order summary</h2>
+                <p class="shipping-info">Shipping and additional costs are calculated based on the values you have entered.</p>
+                <div class="summary-details">
+                    <!-- Adicionar IDs para os totais no resumo -->
+                    <div class="summary-item"><span>Order subtotal:</span> <span id="summary-subtotal">R$0,00</span></div>
+                    <div class="summary-item"><span>Shipping and handling:</span> <span id="summary-shipping">R$10,00</span></div> <!-- Manter estático por enquanto -->
+                    <div class="summary-item"><span>Tax:</span> <span id="summary-tax">R$0,00</span></div> <!-- Manter estático por enquanto -->
+                    <div class="summary-total"><span>Total:</span> <span id="summary-total">R$10,00</span></div>
+                </div>
+            </div>
+
+            <div class="coupon-code">
+                <h3>Coupon code</h3>
+                <p>If you have a coupon code, please enter it in the box below.</p>
+                <div class="coupon-input">
+                    <input type="text" placeholder="Enter your coupon code">
+                    <button>Apply</button>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3>Páginas</h3>
+                <ul>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Categorias principais</h3>
+                <ul>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Men - Product 01</a></li>
+                    <li><a href="#">Men - Product 02</a></li>
+                    <li><a href="#">Woman</a></li>
+                    <li><a href="#">Woman - Product 03</a></li>
+                    <li><a href="#">Woman - Product 04</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Onde nos encontrar</h3>
+                <p>Gentrop</p>
+                <p>000 Endereço</p>
+                <p>Bairro</p>
+                <p>Cidade</p>
+                <p>Brasil</p>
+                <p><a href="#">Vá para a página de contato</a></p>
+            </div>
+            <div class="footer-column newsletter">
+                <h3>Receba as notícias</h3>
+                <p>Pelentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                <form>
+                    <input type="text" placeholder="Seu nome">
+                    <input type="email" placeholder="Seu email">
+                    <button type="submit">Inscreva-se</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Felipe Esportes. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+    <!-- Script para carregar e gerenciar o carrinho -->
+    <script>
+        const cartContainer = document.getElementById('cart-items-container');
+        const itemCountDisplay = document.getElementById('cart-item-count-display');
+        const subtotalDisplay = document.getElementById('cart-subtotal-display');
+        const summarySubtotal = document.getElementById('summary-subtotal');
+        const summaryShipping = document.getElementById('summary-shipping');
+        const summaryTax = document.getElementById('summary-tax');
+        const summaryTotal = document.getElementById('summary-total');
+
+        function formatCurrency(value) {
+            return `R$${value.toFixed(2).replace('.', ',')}`;
+        }
+
+        function renderCart() {
+            const cart = JSON.parse(localStorage.getItem('shoppingCart')) || {};
+            cartContainer.innerHTML = '';
+            let subtotal = 0;
+            let itemCount = 0;
+
+            if (Object.keys(cart).length === 0) {
+                itemCountDisplay.textContent = 'Seu carrinho está vazio.';
+                cartContainer.innerHTML = '<tr><td colspan="5" style="text-align:center;">Nenhum item no carrinho.</td></tr>';
+                subtotalDisplay.textContent = formatCurrency(0);
+                summarySubtotal.textContent = formatCurrency(0);
+                updateSummaryTotal(0);
+                return;
+            }
+
+            for (const productId in cart) {
+                const item = cart[productId];
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                itemCount += item.quantity;
+
+                const row = document.createElement('tr');
+                row.classList.add('cart-item');
+                row.innerHTML = `
+                    <td class="product-details">
+                        <img src="${item.image}" alt="${item.name}" style="width: 50px; height: auto; margin-right: 10px;">
+                        <span class="product-name">${item.name}</span>
+                    </td>
+                    <td class="quantity">
+                        <input type="number" value="${item.quantity}" min="1" data-product-id="${productId}" class="form-control-sm quantity-input" style="width: 70px;">
+                    </td>
+                    <td class="unit-price">${item.priceFormatted}</td>
+                    <td class="total-price">${formatCurrency(itemTotal)}</td>
+                    <td class="remove-item">
+                        <button class="btn btn-danger btn-sm remove-btn" data-product-id="${productId}">🗑️</button>
+                    </td>
+                `;
+                cartContainer.appendChild(row);
+            }
+
+            itemCountDisplay.textContent = `Você tem ${itemCount} item(s) no seu carrinho.`;
+            subtotalDisplay.textContent = formatCurrency(subtotal);
+            summarySubtotal.textContent = formatCurrency(subtotal);
+            updateSummaryTotal(subtotal);
+            addEventListeners();
+        }
+
+        function updateSummaryTotal(subtotal) {
+            const shipping = parseFloat(summaryShipping.textContent.replace('R$', '').replace(',', '.')) || 0;
+            const tax = parseFloat(summaryTax.textContent.replace('R$', '').replace(',', '.')) || 0;
+            const total = subtotal + shipping + tax;
+            summaryTotal.textContent = formatCurrency(total);
+        }
+
+        function addEventListeners() {
+            document.querySelectorAll('.quantity-input').forEach(input => {
+                input.addEventListener('change', handleQuantityChange);
+            });
+            document.querySelectorAll('.remove-btn').forEach(button => {
+                button.addEventListener('click', handleRemoveItem);
+            });
+        }
+
+        function handleQuantityChange(event) {
+            const input = event.target;
+            const productId = input.dataset.productId;
+            const newQuantity = parseInt(input.value, 10);
+            let cart = JSON.parse(localStorage.getItem('shoppingCart')) || {};
+
+            if (newQuantity >= 1 && cart[productId]) {
+                cart[productId].quantity = newQuantity;
+                localStorage.setItem('shoppingCart', JSON.stringify(cart));
+                renderCart();
+            } else if (newQuantity < 1 && cart[productId]) {
+                delete cart[productId];
+                localStorage.setItem('shoppingCart', JSON.stringify(cart));
+                renderCart();
+            }
+        }
+
+        function handleRemoveItem(event) {
+            const button = event.target.closest('.remove-btn'); // Garante pegar o botão
+            if (!button) return; // Sai se não encontrou o botão
+            const productId = button.dataset.productId;
+            let cart = JSON.parse(localStorage.getItem('shoppingCart')) || {};
+
+            if (cart[productId]) {
+                delete cart[productId];
+                localStorage.setItem('shoppingCart', JSON.stringify(cart));
+                renderCart();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', renderCart);
+
+    </script>
+</body>
+</html>

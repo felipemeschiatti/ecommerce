@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men - Product 02 - Felipe Esportes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="produto.css"> </head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo da empresa">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li class="dropdown">
+                    <a href="#">MEN ▼</a>
+                    <ul class="submenu">
+                        <li><a href="#">Camisetas</a></li>
+                        <li><a href="#">Calças</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">WOMAN ▼</a>
+                    <ul class="submenu">
+                        <li><a href="#">Vestidos</a></li>
+                        <li><a href="#">Saias</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="actions">
+            <button class="search-btn">🔍</button>
+            <a href="carrinho.html" class="btn btn-outline-dark btn-sm">🛒 Carrinho</a> <!-- Botão Carrinho adicionado -->
+            <button class="account-btn">MINHA CONTA</button>
+        </div>
+    </header>
+
+    <main class="product-page">
+        <div class="container product-details">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <a href="#">Men</a> / <span>Men - Product 02</span>
+            </div>
+
+            <div class="product-main">
+                <div class="product-image">
+                    <!-- Imagem principal será carregada pelo JS -->
+                    <img src="" alt="Imagem do Produto" id="product-image-main" class="img-fluid">
+                    <!-- Miniaturas podem ser removidas ou carregadas dinamicamente se necessário -->
+                    <div class="thumbnails" id="product-thumbnails">
+                        </div>
+                </div>
+
+                <div class="product-info">
+                    <!-- Título será carregado pelo JS -->
+                    <h1 class="product-title" id="product-title">Carregando...</h1>
+                    <!-- Link pode ser removido ou ajustado -->
+                    <!-- <p class="product-link"><a href="#">Role para detalhes sobre o produto</a></p> -->
+                    <!-- Preço será carregado pelo JS -->
+                    <p class="product-price" id="product-price">Carregando...</p>
+
+                    <!-- Meta informações agora dinâmicas -->
+                    <div class="product-meta">
+                        <p><span>Brand:</span> <span id="product-brand">Carregando...</span></p> <!-- ID adicionado -->
+                        <p><span>Size:</span> <span id="product-sizes">Carregando...</span></p> <!-- ID adicionado -->
+                        <p><span>Color:</span> <span id="product-color">Carregando...</span></p> <!-- ID adicionado -->
+                    </div>
+
+                    <div class="product-actions">
+                        <!-- Input de Quantidade -->
+                        <label for="quantity-input" class="me-2">Quantidade:</label>
+                        <input type="number" id="quantity-input" value="1" min="1" style="width: 60px;" class="form-control-sm d-inline-block me-2">
+                        
+                        <button class="add-to-cart-btn btn btn-success">Adicionar ao carrinho</button> <!-- Classe btn/btn-success adicionada -->
+                        <button class="add-to-wishlist-btn btn btn-outline-secondary">Lista de desejos</button> <!-- Classe btn/btn-outline-secondary adicionada -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-description">
+                <h2>Descrição do Produto</h2>
+                <!-- Descrição será carregada pelo JS -->
+                <p id="product-description-content">Carregando...</p>
+                </div>
+
+            <div class="related-products">
+                <h2>Produtos Relacionados</h2>
+                <div class="product-list">
+                    <div class="product-card">
+                        <img src="images/produto-relacionado1.png" alt="Produto Relacionado 1">
+                        <h3>Produto Relacionado 1</h3>
+                        <p>R$90.00</p>
+                        <a href="#" class="view-product-btn">Ver Produto</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/produto-relacionado2.png" alt="Produto Relacionado 2">
+                        <h3>Produto Relacionado 2</h3>
+                        <p>R$150.00</p>
+                        <a href="#" class="view-product-btn">Ver Produto</a>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3>Páginas</h3>
+                <ul>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Categorias principais</h3>
+                <ul>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Men - Product 01</a></li>
+                    <li><a href="#">Men - Product 02</a></li>
+                    <li><a href="#">Woman</a></li>
+                    <li><a href="#">Woman - Product 03</a></li>
+                    <li><a href="#">Woman - Product 04</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Onde nos encontrar</h3>
+                <p>Gentrop</p>
+                <p>000 Endereço</p>
+                <p>Bairro</p>
+                <p>Cidade</p>
+                <p>Brasil</p>
+                <p><a href="#">Vá para a página de contato</a></p>
+            </div>
+            <div class="footer-column newsletter">
+                <h3>Receba as notícias</h3>
+                <p>Pelentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                <form>
+                    <input type="text" placeholder="Seu nome">
+                    <input type="email" placeholder="Seu email">
+                    <button type="submit">Inscreva-se</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom"></div>
+            <p>&copy; 2025 Felipe Esportes. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+    <script>
+        // Dados dos produtos com mais detalhes
+        const productData = {
+            'camisa-corinthians-2025': {
+                name: 'Camisa I Corinthains 2025 - Masculino',
+                price: 'R$300.00',
+                image: 'images/camisa branca.webp',
+                description: 'Vista as cores do Timão com a nova camisa oficial 2025. Tecido respirável e design exclusivo.',
+                raw_price: 300.00,
+                brand: 'Nike', // Adicionado
+                sizes: 'P, M, G, GG', // Adicionado
+                color: 'Branco' // Adicionado
+            },
+            'tenis-jordan-1': {
+                name: 'Tenis nike Jordan 1 - Masculino',
+                price: 'R$900.00',
+                image: 'images/jordan 1.webp', // Caminho corrigido
+                description: 'O Nike Air Jordan 1 é um ícone no mundo dos sneakers. Conforto e estilo em um só produto.',
+                raw_price: 900.00,
+                brand: 'Nike',
+                sizes: '39, 40, 41, 42, 43',
+                color: 'Vermelho/Preto/Branco'
+            },
+            'camiseta-adidas-treino': {
+                name: 'Camiseta adidas treino - Feminino',
+                price: 'R$140.00',
+                image: 'images/camisa feminina.jpg',
+                description: 'Camiseta leve e respirável da Adidas, ideal para treinos e atividades físicas.',
+                raw_price: 140.00,
+                brand: 'Adidas', // Adicionado
+                sizes: 'PP, P, M, G', // Adicionado
+                color: 'Preto' // Adicionado
+            },
+            'tenis-olympikus-corrida': {
+                name: 'Tênis Olympikus corrida - Feminino',
+                price: 'R$220.00',
+                image: 'images/tenisFeminino.jpg',
+                description: 'Tênis Olympikus projetado para corrida, oferecendo amortecimento e conforto.',
+                raw_price: 220.00,
+                brand: 'Olympikus', // Adicionado
+                sizes: '35, 36, 37, 38, 39', // Adicionado
+                color: 'Rosa/Cinza' // Adicionado
+            },
+            'blusa-lakers': {
+                name: 'Blusa Los Angeles Lakers - Masculino',
+                price: 'R$400.00',
+                image: 'images/blusa.jpg',
+                description: 'Mostre seu apoio aos Lakers com esta blusa estilosa e confortável.',
+                raw_price: 400.00,
+                brand: 'Nike', // Adicionado
+                sizes: 'M, G, GG, XG', // Adicionado
+                color: 'Roxo/Amarelo' // Adicionado
+            }
+        };
+
+        let currentProductId = null; // Variável para guardar o ID do produto atual
+        let currentProduct = null; // Variável para guardar os dados do produto atual
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            currentProductId = params.get('id');
+            currentProduct = productData[currentProductId];
+
+            if (currentProduct) {
+                // Linhas para definir src e alt da imagem principal (re-adicionadas)
+                document.getElementById('product-image-main').src = currentProduct.image;
+                document.getElementById('product-image-main').alt = currentProduct.name;
+
+                // Preenche título, preço, descrição
+                document.getElementById('product-title').textContent = currentProduct.name;
+                document.getElementById('product-price').textContent = currentProduct.price;
+                document.getElementById('product-description-content').textContent = currentProduct.description;
+                document.title = `${currentProduct.name} - Felipe Esportes`;
+
+                // Preenche meta informações (marca, tamanho, cor)
+                document.getElementById('product-brand').textContent = currentProduct.brand || 'N/A';
+                document.getElementById('product-sizes').textContent = currentProduct.sizes || 'N/A';
+                document.getElementById('product-color').textContent = currentProduct.color || 'N/A';
+
+                // Adicionar Event Listener ao botão "Adicionar ao Carrinho" (Re-adicionado)
+                const addToCartButton = document.querySelector('.add-to-cart-btn');
+                if (addToCartButton) {
+                    addToCartButton.addEventListener('click', handleAddToCart);
+                }
+
+            } else {
+                // ... (código existente para produto não encontrado) ...
+                document.getElementById('product-image-main').style.display = 'none'; // Garante que a imagem seja escondida
+                // ... (código existente para limpar meta info) ...
+            }
+        });
+
+        function handleAddToCart() {
+            if (!currentProduct || !currentProductId) return; // Não faz nada se não houver produto
+
+            const quantityInput = document.getElementById('quantity-input');
+            const quantity = parseInt(quantityInput.value, 10);
+
+            if (isNaN(quantity) || quantity < 1) {
+                alert('Por favor, insira uma quantidade válida.');
+                return;
+            }
+
+            // 1. Obter carrinho do localStorage
+            let cart = JSON.parse(localStorage.getItem('shoppingCart')) || {}; // Usar um objeto onde a chave é o ID do produto
+
+            // 2. Verificar se o produto já existe
+            if (cart[currentProductId]) {
+                // Se existe, atualiza a quantidade
+                cart[currentProductId].quantity += quantity;
+            } else {
+                // Se não existe, adiciona o novo produto
+                cart[currentProductId] = {
+                    id: currentProductId,
+                    name: currentProduct.name,
+                    price: currentProduct.raw_price, // Usar o preço numérico
+                    priceFormatted: currentProduct.price, // Guardar o preço formatado para exibição
+                    image: currentProduct.image,
+                    quantity: quantity
+                };
+            }
+
+            //  Salvar carrinho atualizado no localStorage
+            localStorage.setItem('shoppingCart', JSON.stringify(cart));
+
+            //  Feedback 
+            alert(`${quantity} x ${currentProduct.name} adicionado(s) ao carrinho!`);
+        }
+    </script>
+</body>
+</html>

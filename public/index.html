@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header com Hover</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo da empresa">
+    </div>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li class="dropdown">
+                <a href="#">MEN ▼</a>
+                <ul class="submenu">
+                    <li><a href="#">Camisetas</a></li>
+                    <li><a href="#">Calças</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">WOMAN ▼</a>
+                <ul class="submenu">
+                    <li><a href="#">Vestidos</a></li>
+                    <li><a href="#">Saias</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="actions">
+        <button class="search-btn">🔍</button>
+        <a href="produto.html" class="btn btn-outline-dark btn-sm">Produtos</a>
+        <a href="carrinho.html" class="btn btn-outline-dark btn-sm">🛒 Carrinho</a> <!-- Botão Carrinho adicionado -->
+        <button class="btn btn-outline-dark btn-sm">MINHA CONTA</button>
+    </div>
+</header>
+
+<main>
+    <section>
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/camisa nova.jpg" class="d-block w-100" alt="Slide 1">
+                </div> 
+                <div class="carousel-item">  
+                    <img src="images/tenis .png" class="d-block w-100" alt="Slide 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/chuteira.jpg" class="d-block w-100" alt="Slide 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+</main>
+<section class="featured-products">
+    <div class="container featured-products-content">
+        <h2>Produtos em Destaque</h2>
+        <div class="product-list">
+            <div class="product-card">
+                <img src="images/camisa branca.webp" alt="Masculino - Camisa I corinthians 2025">
+                <h3>Camisa I Corinthains 2025 - Masculino</h3>
+                <p>R$300.00</p>
+                <a href="produto.html?id=camisa-corinthians-2025" class="btn btn-primary btn-sm mt-2">Ver Detalhes</a>
+            </div>
+            <div class="product-card">
+                <img src="images/jordan 1.webp" alt="jordan">
+                <h3>Tenis nike Jordan 1 - Masculino</h3>
+                <p>R$900.00</p>
+                <a href="produto.html?id=tenis-jordan-1" class="btn btn-primary btn-sm mt-2">Ver Detalhes</a>
+            </div>
+            <div class="product-card">
+                <img src="images/camisa feminina.jpg" alt="Camiseta adidas treino - Feminino">
+                <h3>Camiseta adidas treino - Feminino</h3>
+                <p>R$140.00</p>
+                <a href="produto.html?id=camiseta-adidas-treino" class="btn btn-primary btn-sm mt-2">Ver Detalhes</a>
+            </div>
+            <div class="product-card">
+                <img src="images/tenisFeminino.jpg" alt="Tênis Olympikus corrida - Feminino">
+                <h3>Tênis Olympikus corrida - Feminino</h3>
+                <p>R$220.00</p>
+                <a href="produto.html?id=tenis-olympikus-corrida" class="btn btn-primary btn-sm mt-2">Ver Detalhes</a>
+            </div>
+            <div class="product-card">
+                <img src="images/blusa.jpg" alt="blusa">
+                <h3>Blusa Los Angeles Lakers - Masculino</h3>
+                <p>R$400.00</p>
+                <a href="produto.html?id=blusa-lakers" class="btn btn-primary btn-sm mt-2">Ver Detalhes</a>
+            </div>
+        </div>
+</section>
+<footer class="footer">
+    <div class="container footer-content">
+        <div class="footer-column">
+            <h3>Páginas</h3>
+            <ul>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Categorias principais</h3>
+            <ul>
+                <li><a href="#">Camisetas Masculinas</a></li>
+                <li><a href="#">Camisetas femininas</a></li>
+                <li><a href="#">Camisetas de Time</a></li>
+                <li><a href="#">Tênis esportivo</a></li>
+                <li><a href="#">Chuteiras</a></li>
+                <li><a href="#">Itens para academia</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Onde nos encontrar</h3>
+            <p>Rua Felipe abcdef</p>
+            <p>234</p>
+            <p>Bairro</p>
+            <p>Cidade</p>
+            <p>Brasil</p>
+            <p><a href="#">Vá para a página de contato</a></p>
+        </div>
+        <div class="footer-column newsletter">
+            <h3>Receba as notícias</h3>
+            <p> Para ter acesso a todas as novidades via e-mail, preencha este campo com os seus dados!</p>
+            <form>
+                <input type="text" placeholder="Seu nome">
+                <input type="email" placeholder="Seu email">
+                <button type="submit">Inscreva-se</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Felipe Esportes. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</html>
