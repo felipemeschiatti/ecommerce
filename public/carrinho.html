@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho de Compras - Felipe Esportes</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css"> <!-- Caminho corrigido -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="carrinho.css"> </head>
+    <script type="text/javascript" src="//cdn.evgnet.com/beacon/partnergentropbr/treinamento_felipe/scripts/evergage.min.js"></script>
+    <link rel="stylesheet" href="css/carrinho.css"> <!-- Caminho corrigido -->
+</head>
 <body>
 
     <header class="header">
@@ -195,116 +197,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-
-    <!-- Script para carregar e gerenciar o carrinho -->
-    <script>
-        const cartContainer = document.getElementById('cart-items-container');
-        const itemCountDisplay = document.getElementById('cart-item-count-display');
-        const subtotalDisplay = document.getElementById('cart-subtotal-display');
-        const summarySubtotal = document.getElementById('summary-subtotal');
-        const summaryShipping = document.getElementById('summary-shipping');
-        const summaryTax = document.getElementById('summary-tax');
-        const summaryTotal = document.getElementById('summary-total');
-
-        function formatCurrency(value) {
-            return `R$${value.toFixed(2).replace('.', ',')}`;
-        }
-
-        function renderCart() {
-            const cart = JSON.parse(localStorage.getItem('shoppingCart')) || {};
-            cartContainer.innerHTML = '';
-            let subtotal = 0;
-            let itemCount = 0;
-
-            if (Object.keys(cart).length === 0) {
-                itemCountDisplay.textContent = 'Seu carrinho está vazio.';
-                cartContainer.innerHTML = '<tr><td colspan="5" style="text-align:center;">Nenhum item no carrinho.</td></tr>';
-                subtotalDisplay.textContent = formatCurrency(0);
-                summarySubtotal.textContent = formatCurrency(0);
-                updateSummaryTotal(0);
-                return;
-            }
-
-            for (const productId in cart) {
-                const item = cart[productId];
-                const itemTotal = item.price * item.quantity;
-                subtotal += itemTotal;
-                itemCount += item.quantity;
-
-                const row = document.createElement('tr');
-                row.classList.add('cart-item');
-                row.innerHTML = `
-                    <td class="product-details">
-                        <img src="${item.image}" alt="${item.name}" style="width: 50px; height: auto; margin-right: 10px;">
-                        <span class="product-name">${item.name}</span>
-                    </td>
-                    <td class="quantity">
-                        <input type="number" value="${item.quantity}" min="1" data-product-id="${productId}" class="form-control-sm quantity-input" style="width: 70px;">
-                    </td>
-                    <td class="unit-price">${item.priceFormatted}</td>
-                    <td class="total-price">${formatCurrency(itemTotal)}</td>
-                    <td class="remove-item">
-                        <button class="btn btn-danger btn-sm remove-btn" data-product-id="${productId}">🗑️</button>
-                    </td>
-                `;
-                cartContainer.appendChild(row);
-            }
-
-            itemCountDisplay.textContent = `Você tem ${itemCount} item(s) no seu carrinho.`;
-            subtotalDisplay.textContent = formatCurrency(subtotal);
-            summarySubtotal.textContent = formatCurrency(subtotal);
-            updateSummaryTotal(subtotal);
-            addEventListeners();
-        }
-
-        function updateSummaryTotal(subtotal) {
-            const shipping = parseFloat(summaryShipping.textContent.replace('R$', '').replace(',', '.')) || 0;
-            const tax = parseFloat(summaryTax.textContent.replace('R$', '').replace(',', '.')) || 0;
-            const total = subtotal + shipping + tax;
-            summaryTotal.textContent = formatCurrency(total);
-        }
-
-        function addEventListeners() {
-            document.querySelectorAll('.quantity-input').forEach(input => {
-                input.addEventListener('change', handleQuantityChange);
-            });
-            document.querySelectorAll('.remove-btn').forEach(button => {
-                button.addEventListener('click', handleRemoveItem);
-            });
-        }
-
-        function handleQuantityChange(event) {
-            const input = event.target;
-            const productId = input.dataset.productId;
-            const newQuantity = parseInt(input.value, 10);
-            let cart = JSON.parse(localStorage.getItem('shoppingCart')) || {};
-
-            if (newQuantity >= 1 && cart[productId]) {
-                cart[productId].quantity = newQuantity;
-                localStorage.setItem('shoppingCart', JSON.stringify(cart));
-                renderCart();
-            } else if (newQuantity < 1 && cart[productId]) {
-                delete cart[productId];
-                localStorage.setItem('shoppingCart', JSON.stringify(cart));
-                renderCart();
-            }
-        }
-
-        function handleRemoveItem(event) {
-            const button = event.target.closest('.remove-btn'); // Garante pegar o botão
-            if (!button) return; // Sai se não encontrou o botão
-            const productId = button.dataset.productId;
-            let cart = JSON.parse(localStorage.getItem('shoppingCart')) || {};
-
-            if (cart[productId]) {
-                delete cart[productId];
-                localStorage.setItem('shoppingCart', JSON.stringify(cart));
-                renderCart();
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', renderCart);
-
-    </script>
+    <script src="js/carrinho.js" defer></script> <!-- Caminho corrigido -->
 </body>
 </html>
